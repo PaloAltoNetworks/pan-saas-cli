@@ -3,5 +3,12 @@ This folder contains a program that interacts with a Palo Alto Networks Firewall
 
 ## Files contained in this folder:
 * sample.xml - Represents the format of the raw XML file
-* SaaSApps_created:XXXX - Output file after running this program. XXXX reflects the current time in the system
+* SaaSApps_created: XXXX - Output file after running this program; XXXX reflects the current time in the system
 * main.go - Program Source Code
+
+## Consideration
+Edit your environmental variables for the following strings:
+* Username
+* PANOUSER - Firewall's Username
+* PANOPWD - Firewall's Password
+* FIREWALL - Firewall's IP Address or FQDN
