@@ -115,7 +115,7 @@ func createSaaSAppsFile(data []byte) *os.File {
 
 	xml.Unmarshal(data, &r)
 
-	fname := "SaaSApps_created:" + time.Now().Format("2022-01-02-19:00") + ".txt"
+	fname := "SaaSApps_created:" + time.Now().Format("2006-01-02 15:04") + ".txt"
 	f, err := os.Create(fname)
 	if err != nil {
 		log.Fatal(err)
