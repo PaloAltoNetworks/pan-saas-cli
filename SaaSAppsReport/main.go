@@ -4,9 +4,9 @@ SaaS Applications Generator
 
 The program runs a SaaS Application Report on a Palo Alto Networks firewall, parses the data, and outputs a text file.
 
-These applications can then be reviewed and tagged as Sanctioned. 
+These applications can then be reviewed and tagged as Sanctioned where applicable.
 
-PLEASE NOTE:  This script is still a Work in Progress and may contain several bugs.
+PLEASE NOTE:  This script is still a Work in Progress and may contain bugs.
 
 Author: Zack Macharia
 Email: zmacharia@paloaltonetworks.com
@@ -20,6 +20,7 @@ package main
 import (
 	"crypto/tls"
 	"encoding/xml"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -29,25 +30,27 @@ import (
 	"time"
 )
 
-//var hold environmental variable and a string from the getApiKey function
+//var: Holds environmental variable and a string from the getApiKey function
 var (
 	Firewall = os.Getenv("FIREWALL")
-	ApiKey = getApiKey()
+	ApiKey   = getApiKey()
 )
 
-//Report is the parent tag of the XML document
+//Report: Parent tag of the XML document
 type Report struct {
 	Report string `xml:"report"`
 	Result Result `xml:"result"`
 }
 
-//Result is the child to the Report tag. There are multiple Entry tags hence set as an array
+/*Result: Child to the Report tag. 
+There are multiple Entry tags within the Result tag; hence set as an array*/
 type Result struct {
 	Result string  `xml:"result"`
 	Entry  []Entry `xml:"entry"`
 }
 
-//Entry is the child to the Result tag; there are multiple Entry tags in the document
+/*Entry: Child to the Result tag.
+There are multiple Entry tags in the document*/
 type Entry struct {
 	Subcategory      string `xml:"subcategory-of-name"`
 	Name             string `xml:"name"`
@@ -56,18 +59,19 @@ type Entry struct {
 	NumberOfThreats  int    `xml:"nthreats"`
 }
 
-//main is the Program's entry point
+//main: Program's entry point
 func main() {
 
 	data, err := saasReport()
 	if err != nil {
 		log.Fatal(err)
 	}
-	createSaaSAppsFile(data)
+	fname := createSaaSAppsFile(data)
+	displayFileData(fname.Name())
 
 }
 
-/*Client defines a client that connects to a device
+/*Client: Defines a client that connects to a device
 This function is used by other functions where different
 path URL is passed depending on the use case*/
 func Client(path string) *http.Response {
@@ -84,7 +88,7 @@ func Client(path string) *http.Response {
 	return resp
 }
 
-//getApiKey connects to a device and generates an API Key
+//getApiKey: This function connects to a device and generates an API Key
 func getApiKey() string {
 	var (
 		Username = os.Getenv("PANOUSER")
@@ -108,7 +112,8 @@ func getApiKey() string {
 	return key
 }
 
-//saasReport makes an API call to the device and pulls down SaaS report data in bytes
+/*saasReport: This function makes an API call to the device
+ and pulls down SaaS report data in bytes form*/
 func saasReport() ([]byte, error) {
 
 	path := "/api/?key=" + ApiKey + "&type=report&async=yes&reporttype=predefined&reportname=SaaS+Application+Usage"
@@ -123,8 +128,10 @@ func saasReport() ([]byte, error) {
 	return body, nil
 }
 
-/*createSaaSAppsFile parses the SaaS report data pulled from the device and writes the name of the SaaS applications to 
-text file. Text file has the title of "SaaSApps_created:XXXX" Where XXXX is the current date and time.*/
+/*createSaaSAppsFile: Parses the SaaS report data pulled from the device.
+Writes the application names from the report to a text file.
+Text file has the title of "SaaSApps_created:XXXX" 
+Where XXXX is the current date and time.*/
 func createSaaSAppsFile(data []byte) *os.File {
 
 	var r Report
@@ -142,3 +149,20 @@ func createSaaSAppsFile(data []byte) *os.File {
 	}
 	return f
 }
+
+//displayFileData: Opens a file for reading
+//reads the file's content and displays it on terminal
+func displayFileData(fname string) {
+	f, err := os.Open(fname)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+	data, err := ioutil.ReadAll(f)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println()
+	fmt.Println(string(data))
+}
+
