@@ -19,9 +19,9 @@ Start the application by generating the API Key.
 
 
 # SaaS-CSV-Report-Parser
-This script takes a CSV file "SaaSApps.csv" in this example that was generated from running a [SaaS Application Usage Report](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/view-and-manage-reports/view-reports.html#id12e5da3d-d44f-4c9e-9d97-8704151ed103) on a Palo Alto Networks Firewall.
+This script takes a CSV file "ExampleSaaSApps.csv" in this example that was generated from running a [SaaS Application Usage Report](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/view-and-manage-reports/view-reports.html#id12e5da3d-d44f-4c9e-9d97-8704151ed103) on a Palo Alto Networks Firewall.
 
-The output is a text file with only the Applications names, in this example "SaaSApps.txt"
+The output is a text file with only the Applications names, in this example "ExampleSaaSApps.txt"
 
 ## Prerequisites
 You need to have Go installed in your system. If you don't have Go please visit (https://go.dev/dl/).
