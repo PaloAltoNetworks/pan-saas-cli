@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	data := readCSVFile("ExampleExampleSaaSApps.csv")
+	data := readCSVFile("ExampleSaaSApps.csv")
 	grepApps(data)
 }
 
