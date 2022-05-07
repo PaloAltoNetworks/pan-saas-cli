@@ -5,8 +5,10 @@ import (
 	"os"
 
 	"github.com/urfave/cli/v2"
-	"github.com/zackmacharia/PANOS-GOLANG/pkg/key"
-	"github.com/zackmacharia/PANOS-GOLANG/pkg/saasreport"
+	// "github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/key"
+	// "github.com/zackmacharia/PANOS-GOLANG/pkg/saasreport"
+	"github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/key"
+	"github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/saasreport"
 )
 
 var app = cli.NewApp()

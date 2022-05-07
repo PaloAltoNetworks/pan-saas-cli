@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	"github.com/zackmacharia/PANOS-GOLANG/pkg/secret"
+	"github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/secret"
 )
 
 // Decrypt: returns a cleartext string
