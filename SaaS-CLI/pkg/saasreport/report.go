@@ -11,8 +11,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/zackmacharia/example/pkg/crypto"
-	"github.com/zackmacharia/example/pkg/fwinfo"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/crypto"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/fwinfo"
 )
 
 //Report: Parent tag of the firewall SaaS Report XML file

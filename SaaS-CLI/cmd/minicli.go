@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/urfave/cli/v2"
-	key "github.com/zackmacharia/example/pkg/apikey"
-	"github.com/zackmacharia/example/pkg/saasreport"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/key"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/saasreport"
 )
 
 var app = cli.NewApp()

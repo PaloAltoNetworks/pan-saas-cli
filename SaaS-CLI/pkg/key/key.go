@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	"github.com/howeyc/gopass"
-	"github.com/zackmacharia/example/pkg/crypto"
-	"github.com/zackmacharia/example/pkg/fwinfo"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/crypto"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/fwinfo"
 )
 
 /* GetApiKey: takes user input use provided information to generate an api key.
