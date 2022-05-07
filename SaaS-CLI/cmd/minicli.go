@@ -5,8 +5,9 @@ import (
 	"os"
 
 	"github.com/urfave/cli/v2"
-	key "github.com/zackmacharia/example/pkg/apikey"
-	"github.com/zackmacharia/example/pkg/saasreport"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/saasreport"
+	"github.com/zackmacharia/PANOS-GOLANG/pkg/apikey"
+	
 )
 
 var app = cli.NewApp()
@@ -31,7 +32,7 @@ func commands() {
 			Aliases: []string{"key"},
 			Usage:   "Generates API Key",
 			Action: func(c *cli.Context) error {
-				key.GetApiKey()
+				apikey.GetApiKey()
 				return nil
 			},
 		},

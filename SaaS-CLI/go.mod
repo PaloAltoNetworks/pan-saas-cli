@@ -1,4 +1,4 @@
-module github.com/zackmacharia/example
+module github.com/zackmacharia/PANOS-GOLANG
 
 go 1.18
 
