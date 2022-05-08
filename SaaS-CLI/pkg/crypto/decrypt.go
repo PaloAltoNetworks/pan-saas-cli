@@ -15,7 +15,7 @@ func Decrypt() string {
 	// A 32 byte array used as the key; used for both encryption and decryption
 	key := secret.Secret()
 
-	cipherTxt, err := ioutil.ReadFile("./pkg/fwinfo/key.data")
+	cipherTxt, err := ioutil.ReadFile("./key.data")
 	if err != nil {
 		log.Fatal("Unable to read fw.json", err)
 	}
