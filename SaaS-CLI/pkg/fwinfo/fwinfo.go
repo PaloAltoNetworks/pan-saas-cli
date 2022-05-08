@@ -16,7 +16,7 @@ type FirewallInfo struct {
 func WriteHostname(s string) {
 	err := os.WriteFile("./pkg/fwinfo/host.data", []byte(s), 0644)
 	if err != nil {
-		log.Fatal("Unable to write to host.data file")
+		log.Fatal("Unable to write to host.data file", err)
 	}
 }
 
@@ -24,7 +24,7 @@ func WriteHostname(s string) {
 func WriteAPIKey(b []byte) {
 	err := os.WriteFile("./pkg/fwinfo/key.data", b, 0644)
 	if err != nil {
-		log.Fatal("Unable to write to key.data file")
+		log.Fatal("Unable to write to key.data file", err)
 	}
 	fmt.Println("Successfully wrote API key to key.data file!")
 }
