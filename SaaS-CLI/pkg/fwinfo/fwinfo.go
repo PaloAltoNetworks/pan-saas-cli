@@ -14,7 +14,8 @@ type FirewallInfo struct {
 
 //WriteHostname: takes the hostname as a string and writes to a file named host.data
 func WriteHostname(s string) {
-	err := os.WriteFile("./pkg/fwinfo/host.data", []byte(s), 0644)
+	// err := os.WriteFile("./pkg/fwinfo/host.data", []byte(s), 0644)
+	err := os.WriteFile("host.data", []byte(s), 0644)
 	if err != nil {
 		log.Fatal("Unable to write to host.data file", err)
 	}
