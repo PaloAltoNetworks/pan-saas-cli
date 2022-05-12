@@ -23,7 +23,7 @@ The executable is packaged with a 32-byte array used to encrypt and decrypt the 
 * Create a secret.go file inside the secret folder
 * Create a function that returns a 32-byte array. Example below:
 ```
-package examplesecret
+package secret
 
 // Secret: returns a 32 byte array used as the encryption and decryption key. This can be any 32byte array.
 func Secret() []byte {
