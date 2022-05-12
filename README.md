@@ -30,3 +30,20 @@ func Secret() []byte {
 	return []byte("thisshouldbeany32bytearrayyoudig") // CHANGE THIS VALUE TO YOUR OWN VALUE
 }
 ```
+
+
+# SaaS-CSV-Report-Parser
+This script takes a CSV file "ExampleSaaSApps.csv" in this example that was generated from running a [SaaS Application Usage Report](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/view-and-manage-reports/view-reports.html#id12e5da3d-d44f-4c9e-9d97-8704151ed103) on a Palo Alto Networks Firewall.
+
+The output is a text file with only the Applications names, in this example "ExampleSaaSApps.txt"
+
+## Prerequisites
+You need to have Go installed in your system. If you don't have Go please visit (https://go.dev/dl/).
+
+## How to run the program
+* Navigate to the directory containing the main.go code
+* Run "go run main.go"
+
+
+## Consideration
+In this example the CSV file is named "SaaSApps.csv". Please update the code to match your file or rename your file to "SaaSApps.csv" if you don't want to modify the code.
