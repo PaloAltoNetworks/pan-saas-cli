@@ -30,7 +30,14 @@ func Secret() []byte {
 	return []byte("thisshouldbeany32bytearrayyoudig") // CHANGE THIS VALUE TO YOUR OWN VALUE
 }
 ```
+* Build the executable 
+```
+env GOOS=target-OS GOARCH=target-architecture go build package-import-path
 
+Example: Linux OS on amd64 Platform
+
+env GOOS=linux GOARCH=amd64 go build -o saascli-linux cmd/saascli.go
+```
 
 # SaaS-CSV-Report-Parser
 This script takes a CSV file "ExampleSaaSApps.csv" in this example that was generated from running a [SaaS Application Usage Report](https://docs.paloaltonetworks.com/pan-os/10-1/pan-os-admin/monitoring/view-and-manage-reports/view-reports.html#id12e5da3d-d44f-4c9e-9d97-8704151ed103) on a Palo Alto Networks Firewall.
