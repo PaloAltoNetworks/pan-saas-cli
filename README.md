@@ -8,14 +8,18 @@ SaaS-CLI is a utility that interacts with a Palo Alto Networks Firewall to pull 
 * saascli-linux - Executable for Linux systems
 * saascli-windows - Executable for Windows systems
 
-## How to use the program
+## Download and Installation
 * For Windows users download the "saascli-windows" executable and rename it by adding a ".exe" extension
 * For Linux users download the "saascli-linux" executable
-* Browse to the folder where the application resides and run the executable
+* For MacOS users download the "saascli-macos" executable
 * Windows run "saas-cli-windows.exe"
-* Linux run "./saas-cli-linux"
+* Linux run "./saas-cli-linux" 
+* MacOS run "./saas-cli-macos" 
+* For Linux and MacOS users you might have to give the application executable rights
+* Run saas-cli-your_operating_system -h to list all the supported commands
 
-## Encryption/Decryption Key Details
+
+## Optional - Encryption/Decryption Key Details
 The executable is packaged with a 32-byte array used to encrypt and decrypt the API key. If you want to change this key and recompile the executable use the following steps.
 *[Install Go](https://go.dev/doc/install) (if you don't have it already)
 * Clone the repository
