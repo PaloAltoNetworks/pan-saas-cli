@@ -9,10 +9,11 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
-	"github.com/zackmacharia/PANOS-GOLANG/pkg/crypto"
-	"github.com/zackmacharia/PANOS-GOLANG/pkg/fwinfo"
+	"github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/crypto"
+	"github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/fwinfo"
 )
 
 //Report: Parent tag of the firewall SaaS Report XML file
@@ -102,6 +103,8 @@ func CreateSaaSAppsFile(data []byte) *os.File {
 	xml.Unmarshal(data, &r)
 
 	fname := "SaaSApps_created:" + time.Now().Format("2006-01-02 15:04") + ".txt"
+	fname = strings.ReplaceAll(fname, " ", "") // remove whitespace
+	fname = strings.ReplaceAll(fname, ":", "_") // replace colon with underscore due to windows filename restrictions
 	f, err := os.Create(fname)
 	if err != nil {
 		log.Fatal(err)

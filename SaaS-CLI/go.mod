@@ -1,4 +1,4 @@
-module github.com/zackmacharia/PANOS-GOLANG
+module github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI
 
 go 1.18
 
