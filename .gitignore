@@ -1,2 +1,2 @@
-SaaS-CLI/secret/*
+SaaS-CLI/pkg/secret/*
 .DS_Store
