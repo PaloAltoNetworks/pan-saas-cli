@@ -4,18 +4,15 @@ SaaS-CLI is a utility that interacts with a Palo Alto Networks Firewall to pull 
 ## Files contained in this folder:
 * cmd - Contains the application entry point code
 * pkg - Contains multiple packages used by the application (The secret package is not included in this repository for security reasons).
-* saascli-macos - Executable for MacOS systems
 * saascli-linux - Executable for Linux systems
 * saascli-windows - Executable for Windows systems
 
 ## Download and Installation
 * For Windows users download the "saascli-windows" executable and rename it by adding a ".exe" extension
 * For Linux users download the "saascli-linux" executable
-* For MacOS users download the "saascli-macos" executable
 * Windows run "saas-cli-windows.exe"
 * Linux run "./saas-cli-linux" 
-* MacOS run "./saas-cli-macos" 
-* For Linux and MacOS users you might have to give the application executable rights
+* For Linux users you might have to give the application executable rights
 * Run saas-cli-your_operating_system -h to list all the supported commands
 
 
