@@ -1,4 +1,5 @@
-module github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI
+// module github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI
+module github.com/PaloAltoNetworks/pan-saas-cli/SaaS-CLI
 
 go 1.18
 
