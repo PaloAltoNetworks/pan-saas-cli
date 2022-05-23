@@ -14,9 +14,6 @@ import (
 
 	"github.com/PaloAltoNetworks/pan-saas-cli/SaaS-CLI/pkg/crypto"
 	"github.com/PaloAltoNetworks/pan-saas-cli/SaaS-CLI/pkg/fwinfo"
-
-	// "github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/crypto"
-	// "github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/fwinfo"
 )
 
 //Report: Parent tag of the firewall SaaS Report XML file

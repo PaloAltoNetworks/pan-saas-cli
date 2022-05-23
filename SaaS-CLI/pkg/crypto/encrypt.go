@@ -8,7 +8,6 @@ import (
 	"log"
 
 	"github.com/PaloAltoNetworks/pan-saas-cli/SaaS-CLI/pkg/secret"
-	// "github.com/zackmacharia/PANOS-GOLANG/SaaS-CLI/pkg/secret"
 )
 
 // Encrypt: takes a cleartext string and encrypts it into an array of bytes
